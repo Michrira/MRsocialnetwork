@@ -1,5 +1,3 @@
-// ! ALL OF THESE FUNCTIONS WORK!!!! 
-
 const {User, Thought} = require('../models');
 module.exports = {
     getUsers(req, res) {
@@ -37,7 +35,7 @@ module.exports = {
     deleteUser(req, res) {
         User.findOneAndDelete({ _id: req.params.userId })
         .then((user) =>
-          !user
+        !user
             ? res.status(404).json({ message: 'No user with that ID' })
             : Thoughts.deleteMany({ _id: { $in: user.thoughts } })
         )
