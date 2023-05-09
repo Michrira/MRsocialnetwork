@@ -1,5 +1,3 @@
-// ! ALL OF THESE ROUTES WORK!!!!
-
 const router = require('express').Router();
 const {
     getUsers,
